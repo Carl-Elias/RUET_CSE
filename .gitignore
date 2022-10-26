@@ -1,6 +1,11 @@
-# Ignore all
-*
-
-# Unignore all files with extensions recursively
-!**/*.*
-**/.vscode
+/1202/module3/q1/bs
+/1202/module3/q3/spmx
+/1202/module4/q1/q1
+/1202/module4/q2/q2
+/1202/module4/q3/q3
+/1204/module1/q1/Triangle
+/1204/module1/q2/Bank_menu
+/1204/module2/q1/Construct
+/1204/module3/q1/q1
+/1204/module3/q2/q2
+/1204/module3/q3/q3
