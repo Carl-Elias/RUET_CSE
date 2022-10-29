@@ -12,7 +12,7 @@ protected:
 public:
     int z = 3;
 };
-class B : public A
+class B
 {
 private:
     int p = 4;
@@ -21,19 +21,25 @@ protected:
     int q = 5;
 
 public:
-    int r = 3;
+    int r = 6;
 };
 
-class C : public B
+class C : public A, public B
 {
 public:
+    // int getx() { return x; }
+    // int getp() { return p; }
     int gety() { return y; }
     int getz() { return z; }
+    int getq() { return q; }
+    int getr() { return r; }
 };
 
 int main()
 {
     C test;
     cout << "protected y = " << test.gety() << endl;
-    cout << "protected z = " << test.getz() << endl;
+    cout << "public z = " << test.getz() << endl;
+    cout << "protected q = " << test.getq() << endl;
+    cout << "public r = " << test.getr() << endl;
 }
