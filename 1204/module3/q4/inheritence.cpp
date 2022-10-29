@@ -17,4 +17,5 @@ class B : public A
 public:
     int getx() { return x; }
     int gety() { return y; }
+    int getz() { return y; }
 }
