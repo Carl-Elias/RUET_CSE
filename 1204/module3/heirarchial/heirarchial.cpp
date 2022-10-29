@@ -30,7 +30,10 @@ public:
 
 int main()
 {
+    B b;
     C test;
+    cout << "protected y = " << b.gety() << endl;
+    cout << "public z = " << b.getz() << endl;
     cout << "protected y = " << test.gety() << endl;
     cout << "public z = " << test.getz() << endl;
 }
