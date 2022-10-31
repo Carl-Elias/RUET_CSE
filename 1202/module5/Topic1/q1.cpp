@@ -25,7 +25,7 @@ public:
         int val;
         cout << "Enter your stack value : ";
         cin >> val;
-        if (top > n - 1)
+        if (top >= n - 1)
             cout << "Stack Overflow" << endl;
         else
         {
@@ -35,7 +35,7 @@ public:
     }
     void pop()
     {
-        if (top < -1)
+        if (top <= -1)
             cout << "Stack Underflow" << endl;
         else
         {
