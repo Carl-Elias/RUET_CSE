@@ -182,7 +182,6 @@ void menu()
 }
 int main()
 {
-  system("clear");
   linked_list a;
   int m;
   while (m != 6)

@@ -7,6 +7,7 @@ class node
 public:
     int data;
     node *next;
+    node *previ;
 };
 
 class linked_list
@@ -33,6 +34,7 @@ public:
             cin >> x;
             node *tmp = new node;
             tmp->data = x;
+            tmp->previ = NULL;
             tmp->next = NULL;
             if (head == NULL)
             {
@@ -45,10 +47,10 @@ public:
             else
             {
                 tail->next = tmp;
+                tmp->previ = tail;
                 tail = tmp;
             }
         }
-        tail->next = head;
     }
     void Display()
     {
@@ -58,16 +60,12 @@ public:
             cout << "List empty" << endl;
         }
         // cout << "h";
-        for (int i = 0; i < n; i++)
+        while (temp != NULL)
         {
             // cout << "--> " << temp->data << " ";
             cout << temp->data << " ";
             // cout << i << " " << temp << " " << temp->data << " " << temp->next << endl;
             temp = temp->next;
-            if (temp == NULL)
-            {
-                temp = head;
-            }
         }
         // (temp!= NULL)
         // {
@@ -112,6 +110,7 @@ public:
                 // {
                 q->data = b;
                 q->next = p->next;
+                q->previ = p;
                 p->next = q;
                 break;
             }
@@ -172,11 +171,13 @@ public:
                 if (p == head)
                 {
                     head = p->next;
+                    p->next->previ = NULL;
                     break;
                 }
                 else
                 {
                     prev->next = p->next;
+                    p->previ = prev;
                     break;
                 }
             }
@@ -197,15 +198,13 @@ public:
         }
         // cout << "h";
         int i = 1;
-        cout << "no node        data next" << endl;
+        cout << "no prev        node        data next" << endl;
         while (temp != NULL)
         {
             // cout << " --> " << temp->data << " ";
-            cout << i << " " << temp << " " << temp->data << " " << temp->next << endl;
+            cout << i << " " << temp->previ << " " << temp << " " << temp->data << " " << temp->next << endl;
             temp = temp->next;
             i++;
-            if (temp == head)
-                break;
         }
         cout << endl;
     }
@@ -215,7 +214,7 @@ void menu()
 {
     cout << endl;
     cout << "******** Menu *****" << endl;
-    cout << "Circular Linked List" << endl;
+    cout << "Doubly Linked List" << endl;
     cout << "1. Create \n2. Insert \n3. Delete \n4.Update \n5. Display \n6. Exit" << endl;
     cout << "Enter your option: " << endl;
 }
