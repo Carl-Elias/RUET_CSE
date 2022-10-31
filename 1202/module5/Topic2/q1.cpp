@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int n;
+int n = 10;
 int stack[0];
 class node
 {
@@ -33,30 +33,35 @@ public:
         int val;
         cout << "Enter your stack value : ";
         cin >> val;
-        node *tmp = new node;
-        tmp->data = val;
-        tmp->previ = NULL;
-        tmp->next = NULL;
-        if (head == NULL)
-        {
-            head = tmp;
-        }
-        if (tail == NULL)
-        {
-            tail = tmp;
-            top++;
-        }
+        if (top >= n - 1)
+            cout << "Stack Overflow" << endl;
         else
         {
-            tail->next = tmp;
-            tmp->previ = tail;
-            tail = tmp;
-            top++;
+            node *tmp = new node;
+            tmp->data = val;
+            tmp->previ = NULL;
+            tmp->next = NULL;
+            if (head == NULL)
+            {
+                head = tmp;
+            }
+            if (tail == NULL)
+            {
+                tail = tmp;
+                top++;
+            }
+            else
+            {
+                tail->next = tmp;
+                tmp->previ = tail;
+                tail = tmp;
+                top++;
+            }
         }
     }
     void pop()
     {
-        if (top < -1)
+        if (top <= -1)
             cout << "Stack Underflow" << endl;
         else
         {
