@@ -35,6 +35,7 @@ public:
         cin >> val;
         node *tmp = new node;
         tmp->data = val;
+        tmp->previ = NULL;
         tmp->next = NULL;
         if (head == NULL)
         {
@@ -59,7 +60,8 @@ public:
             cout << "Stack Underflow" << endl;
         else
         {
-            cout << "The poped element is : " << stack[top] << endl;
+            cout << "The poped element is : " << tail->data << endl;
+            tail = tail->previ;
             top--;
         }
     }
@@ -74,6 +76,8 @@ public:
                 cout << "_____" << endl;
                 temp = temp->previ;
             }
+            cout << "| " << head->data << " |" << endl;
+            cout << "_____" << endl;
         }
         else
             cout << "Stack is Empty.." << endl;
