@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int n = 10;
+int n = 5;
 int stack[0];
 class node
 {
