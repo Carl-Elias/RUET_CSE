@@ -15,17 +15,16 @@ public:
 class B : public A
 {
 };
-
 class C : public B
 {
 public:
     int gety() { return y; }
-    int getz() { return z; }
 };
 
 int main()
 {
     C test;
+    cout << "Private x not accessible out of base class" << endl;
     cout << "protected y = " << test.gety() << endl;
-    cout << "protected z = " << test.getz() << endl;
+    cout << "public z = " << test.z << endl;
 }

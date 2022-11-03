@@ -16,24 +16,21 @@ public:
 class B : public A
 {
 public:
-    // int getx() { return x; }
     int gety() { return y; }
-    int getz() { return z; }
 };
 class C : public A
 {
 public:
-    // int getx() { return x; }
     int gety() { return y; }
-    int getz() { return z; }
 };
 
 int main()
 {
     B b;
     C test;
+    cout << "Private x not accessible out of base class" << endl;
     cout << "protected y = " << b.gety() << endl;
-    cout << "public z = " << b.getz() << endl;
+    cout << "public z = " << b.z << endl;
     cout << "protected y = " << test.gety() << endl;
-    cout << "public z = " << test.getz() << endl;
+    cout << "public z = " << test.z << endl;
 }

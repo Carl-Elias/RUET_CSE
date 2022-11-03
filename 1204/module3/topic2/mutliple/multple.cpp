@@ -28,19 +28,16 @@ public:
 class C : public A, public B
 {
 public:
-    // int getx() { return x; }
-    // int getp() { return p; }
     int gety() { return y; }
-    int getz() { return z; }
     int getq() { return q; }
-    int getr() { return r; }
 };
 
 int main()
 {
     C test;
+    cout << "Private x, p not accessible out of base class" << endl;
     cout << "protected y = " << test.gety() << endl;
-    cout << "public z = " << test.getz() << endl;
+    cout << "public z = " << test.z << endl;
     cout << "protected q = " << test.getq() << endl;
-    cout << "public r = " << test.getr() << endl;
+    cout << "public r = " << test.r << endl;
 }
