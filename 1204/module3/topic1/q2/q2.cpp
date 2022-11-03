@@ -18,14 +18,6 @@ public:
         gold = 2;
         land = 3;
     }
-    int getprivate_d()
-    {
-        return money;
-    }
-    int get_prot()
-    {
-        return gold;
-    }
 };
 class Son : protected Father
 {
@@ -79,17 +71,12 @@ public:
 
 int main()
 {
-    Father test1;
     Son test2;
     GrandSon1 test3;
     GrandSon2 test4;
     GrandSon3 test5;
-    cout << "Father" << endl;
-    cout << "Private = " << test1.getprivate_d() << endl;
-    cout << "Protected = " << test1.get_prot() << endl;
-    cout << "Public = " << test1.land << endl;
-    cout << "Private not accessible from FAther" << endl;
-    cout << "Son Public Class from Father members" << endl;
+    cout << "Son Protected Class from Father members" << endl;
+    cout << "Private not accessible from Father" << endl;
     cout << "Protected = " << test2.get_prot() << endl;
     cout << "Protected = " << test2.get_prot2() << endl;
     cout << "GrandSon1 Public Class from Son members" << endl;
