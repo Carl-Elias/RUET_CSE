@@ -19,6 +19,13 @@ public:
         prev.img = img + next.img;
         return prev;
     }
+    Circuit operator-(Circuit const &next)
+    {
+        Circuit prev;
+        prev.real = real - next.real;
+        prev.img = img - next.img;
+        return prev;
+    }
     Circuit operator*(Circuit const &next)
     {
         Circuit prev;
@@ -50,7 +57,7 @@ int main()
     system("clear");
 #endif
     Circuit z1(3, 4), z2(4, -3), z3(0, 6), z4(100, 50);
-    Circuit result, a = z1 * z2, b = z2 * z3, c = z3 * z1;
-    result = z4 / ((z1 * z2 * z3) / (a + b + c));
+    Circuit result;
+    result = z4 / ((z1 * z2 * z3) / (z1 * z2 + z2 * z3 + z3 * z1));
     result.print();
 }
